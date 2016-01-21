@@ -13,7 +13,7 @@ H5P.TwitterUserFeed = (function ($) {
     }, options);
     // Keep provided id.
     this.id = id;
-  };
+  }
 
   /**
    * Attach function called by H5P framework to insert H5P content into
@@ -28,17 +28,17 @@ H5P.TwitterUserFeed = (function ($) {
     $container.addClass("h5p-twitter-user-feed");
 
     $container.append(
-      '<a class="twitter-timeline" href="https://twitter.com/twitterapi"\\n\
-      data-widget-id="558756407995273216" data-screen-name="' + this.options.userName
-      + '" data-show-replies="' + this.options.showReplies 
-      + '" data-tweet-limit="' + this.options.numTweets + '">Tweets by @'
-      + this.options.userName + '</a>');
+      '<a class="twitter-timeline" href="https://twitter.com/twitterapi"' +
+      'data-widget-id="558756407995273216" data-screen-name="' + this.options.userName +
+      '" data-show-replies="' + this.options.showReplies +
+      '" data-tweet-limit="' + this.options.numTweets + '">Tweets by @' +
+      this.options.userName + '</a>');
 
     if (window.twttr !== undefined && window.twttr.widgets !== undefined) {
       window.twttr.widgets.load($container.get(0));
     }
   };
-  
+
   C.prototype.setUpTwitter = function() {
     if (H5P.TwitterUserFeed.twitterSetUp) {
       return;
